@@ -1,0 +1,302 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:foo>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title style="color: #333333">
+        Upload Review
+    </title>
+    <link rel="stylesheet" type="text/css" href="/css-lib/combined_6E61D7D10078B485C554F253CC70B4CD.css" />
+
+    <link href="/css-lib/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="/css-lib/bootstrap-responsive.min.css" type="text/css" rel="stylesheet">
+    <link href="/Content/font-awesome.min.css" type="text/css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/css-dev/combined_4F7578E7167B25913F3868FC4F3E0422.css" />  
+
+    <script src="/bundles/jquery?v=vEaljJV1h4KYaqn2s6dj9T-6yVrUkuN-z--_W-PVafM1"></script>
+
+    <script src="/bundles/bootstrap?v=zuBUApt3-evb9tsodV4ZyokeKcF77ItuNO6QbvoVfpI1"></script>
+
+    <script src="/bundles/jqueryval?v=vYbr-3ljCYjg2jHwbJx9Mf2pxLtJnYWhypxESEKxYw41"></script>
+
+    <script src="/bundles/modernizr?v=wBEWDufH_8Md-Pbioxomt90vm6tJN2Pyy9u9zHtWsPo1"></script>
+
+
+    <script type="text/javascript" src="/js-dev/combined_B1915C4758A5D691C7A46A40A1A8BE30.js"></script>
+    <script src="/js-dev/select2.min.js"></script>
+
+</head>
+<body style="background-color: #fff;">
+    <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="/"><img alt="Berkeley International Office Logo" src="/images/BIO_trans.png" /></a>
+                <div id="brandName" class="main-heading">
+                    <h2>Upload Review</h2>
+                </div>
+            </div>
+
+            <div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-user fa-lg"></i> Logged In as: Musthafa, Zeyana <span class="caret opacityOne"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/">Guest Portal</a></li>
+                                    <li><a href="/Home/Admin">Administration</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="/CAS/LogOut">Log Out</a></li>
+                            </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="mt-alert-messages" style="display:none;">
+                <button type="button" class="close" onclick="dismissAlertMessage();" aria-hidden="true" style="padding:5px;">&times;</button>
+                <div class="alert"></div>
+            </div>
+
+            <button class="hidden" type="button" data-toggle="modal" data-target="#displayErrorModal" id="btnTriggerModal"></button>
+
+            <div id="displayErrorModal" class="modal fade" tabindex="-1" aria-labelledby="displayErrorModalLabel" aria-hidden="true" style="display:block">
+                <div class="modal-content">
+                    <div class="modal-header bg-danger">
+                        <h4 class="modal-title">
+                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                            <span class="sr-only">Error:</span>Error
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="divErrorMessage"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div><!-- /.modal -->
+        </div>
+    </div>
+    <div class="container body-content">
+        <div class="row">
+            <div class="main-heading">
+                
+    <h2>Review</h2>
+
+            </div>
+        </div>
+        
+
+
+
+
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">Filter</div>
+        <div id="pnlFilter" class="panel-body">
+            <div class="col-md-4" id="divStatus">
+                <label>Document Status</label>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="Received" id="chkReceived">Received</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="Reviewed" id="chkReviewed">Reviewed</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="Waiting" id="chkWaiting">Waiting</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="Accepted" id="chkAccepted">Accepted</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="Rejected" id="chkRejected">Rejected</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="Incomplete" id="chkIncomplete">Incomplete</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="Archived - Valid" id="chkArchivedValid">Archived - Valid</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="Archived - Invalid" id="chkArchivedInvalid">Archived - Invalid</label>
+                </div>
+
+            </div>
+            <div class="col-md-4" id="divUPG">
+                <label>Upload Profile Group</label>
+                <select id="ddlUploadProfileGroup" name="UploadProfileGroupsDD" onchange="filterOnUploadProfileGroup(this)"><option value="NIF, Classic        ">NIF, Classic        </option>
+<option value="BIO                 ">BIO                 </option>
+<option value="NIFTest             ">NIFTest             </option>
+<option value="Arrival Confirmation">Arrival Confirmation</option>
+<option value="Financial Aid       ">Financial Aid       </option>
+<option value="Daily Folder        ">Daily Folder        </option>
+<option value="SSU                 ">SSU                 </option>
+<option value="NIF, Mercury        ">NIF, Mercury        </option>
+<option value="VSIS                ">VSIS                </option>
+<option value="VSIS DHL            ">VSIS DHL            </option>
+<option selected="selected" value="">--Select--</option>
+</select>
+
+            </div>
+            <div class="col-md-4" id="divUP">
+                <label>Upload Profile</label>
+                <select id="ddlUploadProfile" name="UploadProfilesDD" onchange="filterOnUploadProfile(this)"><option value="NIFRegular">NIFRegular</option>
+<option value="NIFDependent">NIFDependent</option>
+<option value="NIFSummerStart">NIFSummerStart</option>
+<option value="NIFSummerStartDependent">NIFSummerStartDependent</option>
+<option value="NIFGuestRegular">NIFGuestRegular</option>
+<option value="ArrivalConf2016Fall">ArrivalConf2016Fall</option>
+<option value="FA_UG_Fall15_Family">FA_UG_Fall15_Family</option>
+<option value="FA_GradTF_Fall15_Spring16">FA_GradTF_Fall15_Spring16</option>
+<option value="FA_GradPG_Fall15_Spring16">FA_GradPG_Fall15_Spring16</option>
+<option value="FA_UG_Spring16_andFall15Personal">FA_UG_Spring16_andFall15Personal</option>
+<option value="FA_UGScholarship_Fall15">FA_UGScholarship_Fall15</option>
+<option value="DfOpt">DfOpt</option>
+<option value="DfStemExt">DfStemExt</option>
+<option value="DfCpt">DfCpt</option>
+<option value="DfJ1OnCampusEmployment">DfJ1OnCampusEmployment</option>
+<option value="DfJ1AcademicTraining">DfJ1AcademicTraining</option>
+<option value="DfAddDependent">DfAddDependent</option>
+<option value="DfExtensionOfProgram">DfExtensionOfProgram</option>
+<option value="DfReducedCourseLoad">DfReducedCourseLoad</option>
+<option value="DfTransferOut">DfTransferOut</option>
+<option value="DfDocumentReplacement">DfDocumentReplacement</option>
+<option value="DfCopyOfOldFormRequest">DfCopyOfOldFormRequest</option>
+<option value="DfGeneral">DfGeneral</option>
+<option value="SsuUploadI797">SsuUploadI797</option>
+<option value="SsuEadCardUpload">SsuEadCardUpload</option>
+<option value="GuestUploader">GuestUploader</option>
+<option value="FA_GradTFPG_Spring16">FA_GradTFPG_Spring16</option>
+<option value="NIFMRegularFall2016">NIFMRegularFall2016</option>
+<option value="NIFMDependentFall2016">NIFMDependentFall2016</option>
+<option value="NIFMSummerStartFall2016">NIFMSummerStartFall2016</option>
+<option value="NIFMSummerStartDependentFall2016">NIFMSummerStartDependentFall2016</option>
+<option value="FA_UG_Fall16">FA_UG_Fall16</option>
+<option value="NIFMRegular">NIFMRegular</option>
+<option value="NIFMDependent">NIFMDependent</option>
+<option value="ArrivalConfirmation">ArrivalConfirmation</option>
+<option value="SsuuploadI983">SsuuploadI983</option>
+<option value="SsuUploadEvaluation">SsuUploadEvaluation</option>
+<option value="TestUpload">TestUpload</option>
+<option value="FA_UGScholarship">FA_UGScholarship</option>
+<option value="SMRNIFMSummerStartFall2016">SMRNIFMSummerStartFall2016</option>
+<option value="SMRNIFMSummerStartDependentFall2016">SMRNIFMSummerStartDependentFall2016</option>
+<option value="SMRNIFMDependentSpr2017">SMRNIFMDependentSpr2017</option>
+<option value="SMRNIFMRegularSpr2017">SMRNIFMRegularSpr2017</option>
+<option value="FA_DELETE_Grad_Appeal">FA_DELETE_Grad_Appeal</option>
+<option value="FA_DELETE_AppealGradTFPG">FA_DELETE_AppealGradTFPG</option>
+<option value="FA_DELETE_AppealGradParentGrant">FA_DELETE_AppealGradParentGrant</option>
+<option value="FA_UGAppeal">FA_UGAppeal</option>
+<option value="TestSMRNIFMSummerStartFall2016">TestSMRNIFMSummerStartFall2016</option>
+<option value="TestSMRNIFMSummerStartDependentFall2016">TestSMRNIFMSummerStartDependentFall2016</option>
+<option value="VsisDependent">VsisDependent</option>
+<option value="TestSMRNIFMRegularSpr2017">TestSMRNIFMRegularSpr2017</option>
+<option value="VsisEprUpload">VsisEprUpload</option>
+<option value="FA_DELETE_AppealGradTFEssay">FA_DELETE_AppealGradTFEssay</option>
+<option value="FA_DELETE_AppealFAGradTFPG">FA_DELETE_AppealFAGradTFPG</option>
+<option value="FA_DELETE_AppealFAGradParentGrant">FA_DELETE_AppealFAGradParentGrant</option>
+<option value="FA_UG">FA_UG</option>
+<option value="NIFMSummerStart">NIFMSummerStart</option>
+<option value="NIFMSummerStartDependent">NIFMSummerStartDependent</option>
+<option value="VsisRegular">VsisRegular</option>
+<option value="DHLTracking">DHLTracking</option>
+<option value="TestI983">TestI983</option>
+<option selected="selected" value="">--Select--</option>
+</select>
+
+            </div>
+        </div>
+    </div>
+    <div id="divList">
+        <input type="button" value="Clear Column Filters" class="pull-right btn btn-default" id="btnClearColumnFilters" onclick="fnResetAllColumnFilters();" />
+        <input type="button" value="Clear All Filters" class="pull-right btn btn-default" id="btnClearAllFilters" onclick="clearAllFilters();" />
+
+        <table class="table table-hover table-striped table-bordered" id="uploadReviewList">
+            <thead class="alert alert-warning">
+                <tr>
+                    <th> User ID </th>
+                    <th> Uploader Name </th>
+                    <th> Uploader SID </th>
+                    <th> Uploader Email </th>
+                    <th> Batch ID </th>
+                    <th> Upload ID </th>
+                    <th> Document Type </th>
+                    <th> Upload Date/Time </th>
+                    <th> Status </th>
+                    <th> View </th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th> User ID </th>
+                    <th> Uploader Name </th>
+                    <th> Uploader SID </th>
+                    <th> Uploader Email </th>
+                    <th> Batch ID </th>
+                    <th> Upload ID </th>
+                    <th> Document Type </th>
+                    <th> Upload Date/Time </th>
+                    <th> Status </th>
+                    <th> View </th>
+                </tr>
+            </tfoot>
+            <tbody></tbody>
+
+        </table>
+    </div>
+</div>
+
+
+
+
+        <hr />
+
+        <footer class="footer">
+            <div class="row">
+                <div class="wow fadeInUp" data-wow-offset="10" data-wow-duration="1.5s" data-wow-delay=".25s">
+                    <ul class="list-unstyled fullWidth zeroAllMargin">
+                        <li id="side-home" class="animated bounceInLeft textCenter"><a href="/">International Office Guest Portal</a></li>
+                        <li class="textCenter"><a href="http://internationaloffice.berkeley.edu/contact-us">Contact Us</a></li>
+                        <li class="textCenter"><a href="http://internationaloffice.berkeley.edu/about_us">About Us</a></li>
+                        <li class="textCenter"><a href="http://berkeley.edu" target="_blank">University of California - Berkeley</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="mt-copyright">
+                    <p>&copy; 2017 - Berkeley International Office</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    
+    <link rel="stylesheet" type="text/css" href="/css-lib/combined_71A81611DCE783BC69A9CC57D5218DB7.css" />
+
+    <script type="text/javascript" src="/js-dev/combined_47271E43CC36E01E7E6ECEC246506001.js"></script>
+
+
+
+</body>
+</html>
+
+
+<style>
+    body {
+        display: none;
+    }
+</style>
+<script>
+    if (self == top) {
+        document.getElementsByTagName("body")[0].style.display = 'block';
+    }
+    else {
+        top.location = self.location;
+    }
+
+    $('.main-heading h2').prepend("");
+    $('.main-heading h2').css('color', '#333333');
+</script>

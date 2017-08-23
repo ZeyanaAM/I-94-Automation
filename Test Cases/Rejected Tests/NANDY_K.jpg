@@ -1,0 +1,990 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0039)https://i94.cbp.dhs.gov/I94/recent.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>
+ 
+
+
+	
+
+	
+
+	
+
+	
+		Most Recent I-94
+	
+
+</title>
+
+
+
+
+
+
+
+<meta name="description" content="Home page of the U.S. Government&#39;s Official Web Portal for retrieving I-94 Admission number">
+<meta name="keywords" content="U.S. Customs and Border Protection, CBP Form I-94, Arrival-Departure record, I-94 Number, Form I-94 admission stamp, i-94, i94, Admission into the U.S., Class of Admission, Nonimmigrant travelers, Non-Immigrant visitors, Visit the U.S, Automated I-94, I94 Automation, print I-94 number">
+<meta name="keywords" content="U.S Citizenship and Immigration Services, USCIS, Current nonimmigrant status, Non-immigrant, Current status, I-94 #, Arrival/Departure Document, Arrival/Departure Document #, Place of last entry, Date of last entry, immigration form, extend my stay"> 
+<meta name="keywords" content="USCIS, I-9 Employment Eligibility Verification, I-102 Application for Replacement/Initial Nonimmigrant Arrival - Departure Document, I-129 Petition for a Nonimmigrant Worker, I-485 Application to Register Permanent Residence or Adjust Status, I-539 Application to Extend/Change Nonimmigrant Status, I-914 Application for T Nonimmigrant Status, I-918 Petition for U Nonimmigrant Status, SAVE, E-Verify, USCIS Form I-94 (white)">
+<meta name="keywords" content="Department of Motor Vehicles, apply for a driver&#39;s license, driving license application">
+<meta name="keywords" content="Social Security Administration, get or replace a social security card, I-94 document, current U.S. immigration document, DHS Work Authorization"> 
+<meta name="keywords" content="Department of Labor, Application for Employment Certification ETA Form 9089">
+<meta name="keywords" content="Department of Justice, Immigration and Naturalization Service, Inspection Report">
+<meta name="keywords" content="immmigration record, immigrations">
+
+
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="EXPIRES" content="0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Language" content="en">
+
+<script language="JavaScript" src="./Most Recent I-94_files/popups.js"></script>
+
+<style type="text/css">
+	@import url("/I94/css/i94.css");
+</style>
+
+<script>
+	var ctx = "/I94"
+	var consentpage = ctx + "\consent.html";
+
+</script>
+
+<script language="JavaScript" type="text/JavaScript">
+
+
+
+var nonFaqTitle = window.document.title;
+
+
+function swapDisplay( selected, event )
+{
+	if (typeof event != 'undefined' && event.keyCode != 13)
+	{
+		return;
+	}
+	var list = ["retrieve","faq"];
+	var el = document.getElementById(selected);
+	el.style.display="block";
+	el = document.getElementById(selected + "Tab");
+	el.style.backgroundColor="white";	
+	el.style.color="#001E5A";
+
+	if(selected == "retrieve")
+	{
+		el = document.getElementById("bluebar1");
+		el.style.visibility="hidden";
+		
+		el = document.getElementById("bluebar2");
+		el.style.visibility="visible";
+
+		window.document.title = nonFaqTitle;
+	}
+	else
+	{
+		el = document.getElementById("bluebar2");
+		el.style.visibility="hidden";
+		
+		el = document.getElementById("bluebar1");
+		el.style.visibility="visible";
+
+		window.document.title = 'I-94 Frequently Asked Questions';
+	}
+	
+	for( var i = 0; i < list.length; i++ )
+	{
+		if( list[i] != selected )
+		{
+			el = document.getElementById( list[i] );
+			el.style.display="none";
+			el = document.getElementById(list[i] + "Tab");
+			el.style.backgroundColor="#BBCAE9";
+		}
+	}
+}
+
+function changeStyle( selected )
+{
+	var el = document.getElementById(selected +"Tab");
+	el.style.cursor="pointer";
+	if (el.style.backgroundColor == "white") {
+		el.style.color = "#001E5A";
+	} else {
+		el.style.color="#ffffff";
+		el.style.backgroundColor="#606D98";
+	}
+}
+
+function changeStyleBack( selected )
+{
+	var el = document.getElementById(selected +"Tab");
+	if (el.style.backgroundColor != "white") {
+		el.style.color = "#001E5A";
+		el.style.backgroundColor="#BBCAE9";
+	}
+}
+
+
+
+function checkForBackButton()
+{
+	var xmlhttp;
+	if (window.XMLHttpRequest)
+  	{
+		// code for IE7+, Firefox, Chrome, Opera, Safari
+  		xmlhttp=new XMLHttpRequest();
+  	}
+	else
+  	{// code for IE6, IE5
+  		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  	}
+	
+	xmlhttp.onreadystatechange=function()
+  	{
+		if (xmlhttp.readyState==4 && xmlhttp.status==200)
+	    {
+		//alert ("valid");	
+	     //  window.location.replace("consent.html");
+	     ; //do nothoing everything is good
+	    }
+		if (xmlhttp.readyState==4 && xmlhttp.status==412)
+	    {
+			//alert ("Invalid");	
+	       window.location.replace("consent.html");
+	    }
+  	}
+	xmlhttp.open("GET", ctx + "/consent.html?backbutton",false);
+	xmlhttp.send();
+}
+
+function logoutWithAjax()
+{
+	var xmlhttp;
+	if (window.XMLHttpRequest)
+  	{
+		// code for IE7+, Firefox, Chrome, Opera, Safari
+  		xmlhttp=new XMLHttpRequest();
+  	}
+	else
+  	{// code for IE6, IE5
+  		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  	}
+	
+	xmlhttp.onreadystatechange=function()
+  	{
+		if (xmlhttp.readyState==4 && xmlhttp.status==200)
+	    {
+	       window.location.replace("consent.html");
+	    }
+  	}
+	xmlhttp.open("GET", ctx + "/consent.html?logout",true);
+	xmlhttp.send();
+}
+
+function init()
+{
+	//alert("called");
+	//checkForBackButton();
+	document.getElementById('faq').style.display='none';
+	document.getElementById('bluebar1').style.visibility='hidden';
+	if(document.getElementById('foia'))
+	{
+		document.getElementById('foia').value='';
+	}
+}
+
+
+
+window.history.forward();
+
+ function noBack()
+ {
+     window.history.forward();
+ }
+
+
+
+</script>
+
+
+</head>
+
+<body onload="init(), noBack()" onpageshow="if (event.persisted) noBack();" onunload="">
+
+<meta http-equiv="refresh" content="1200;url= /I94/consent.html">
+
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+
+<div id="main">
+<div class="headerBar">
+	<a href="http://www.cbp.gov/" tabindex="1">
+	<img id="logo" src="./Most Recent I-94_files/header.jpg" alt="U.S. Department of Homeland Security, U.S. Customs and Border Protection, Securing America&#39;s Borders" border="0"></a>
+</div>
+</div>
+
+<div id="main">
+	<div class="smallcontent1">	     
+
+    <br>
+
+	
+		
+	</div>
+	
+	
+	
+	<div id="menulist">
+		<div id="skipnav">
+		<img src="./Most Recent I-94_files/1x1-transparent.gif" width="0" height="0" border="0" alt="">
+		</div>
+		<ul class="basictab">
+			<li id="getI94number">
+	 		 <a id="retrieveTab" tabindex="3" style="background-color:white;width:159px;background-image: url(&#39;/I94/images/top-transparent-160_new_2.gif&#39;)" onkeypress="swapDisplay( &#39;retrieve&#39;, event );" onclick="swapDisplay( &#39;retrieve&#39; );" onmouseover="changeStyle( &#39;retrieve&#39; );" onmouseout="changeStyleBack( &#39;retrieve&#39; );">Get I-94 Information</a>
+			</li>
+	
+			<li id="I94help">
+			<a id="faqTab" tabindex="4" style="width:159px;background-image: url(&#39;/I94/images/top-transparent-160_new_2.gif&#39;)" onkeypress="swapDisplay( &#39;faq&#39;, event );" onclick="swapDisplay( &#39;faq&#39; );" onmouseover="changeStyle( &#39;faq&#39; );" onmouseout="changeStyleBack( &#39;faq&#39; );">I-94 FAQ</a>
+			</li>	
+		</ul>              
+	</div>
+ 	<div class="imgs">
+	 	<img id="bluebar1" src="./Most Recent I-94_files/blue_bar_1.gif" width="160px" height="1px" alt="" style="visibility: hidden;"> 
+	 	<img id="bluebar2" src="./Most Recent I-94_files/blue_bar_1.gif" width="160px" height="1px" alt=""> 
+		<img id="bluebar3" src="./Most Recent I-94_files/blue_bar_1.gif" width="450.5px" height="1px" alt=""> 
+	</div>
+  
+</div>
+<div id="main" class="body">
+	<div id="retrieve">
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="page_title">
+	<br>
+	<h1 id="pagetitleleft">
+		
+			
+				Most Recent I-94
+			
+			
+		
+		
+		<img src="./Most Recent I-94_files/1x1-grey.gif" width="710" height="1" alt="">
+	</h1>
+	
+</div>
+
+
+<div id="topcontent" class="nopadding">
+<br>
+<h2>Admission (I-94) Record Number: 78846679227
+<input type="button" name="Submit" class="non-print" id="non-print" value="Print" onclick="javascript:window.print();return true" tabindex="10">
+</h2>
+<h2>Most Recent Date of Entry:
+2013 January 01
+</h2>
+<h2>Class of Admission:
+F1
+</h2>
+<h2>Admit Until Date:
+
+
+
+	
+	
+		UNKNOWN
+	
+
+
+</h2>
+
+
+
+
+
+
+
+
+
+
+
+<h2>Details provided on the I-94 Information form:
+
+</h2>
+<div id="leftcontent1" style="padding: 0 20px">
+	<table>
+		<tbody><tr>
+			<td class="datalabels">Last/Surname:</td>
+			<td class="datalabels">NANDY</td>
+		</tr>
+		<tr>
+			<td class="datalabels">First (Given) Name:</td>
+			<td class="datalabels">KRISHANU</td>
+		</tr>
+		<tr>
+			<td class="datalabels">Birth Date:</td>
+			<td class="datalabels">1986 August 26</td>
+		</tr>
+		<tr>
+			<td class="datalabels">Passport Number:</td>
+			<td class="datalabels">G0501052</td>
+		</tr>
+		<tr>
+			
+				
+				
+					<td class="datalabels">Country of Issuance:</td>
+				
+			
+			<td class="datalabels">India</td>
+		</tr>
+	</tbody></table>
+</div>
+
+
+<br>
+<div id="button">
+	<form id="user" action="https://i94.cbp.dhs.gov/I94/recent.html" method="post">
+		<input type="hidden" name="mode" value="request">
+		
+		<button tabindex="30" id="Submit3" name="requestType" value="history" type="submit">Get Travel History</button>
+	</form>
+</div>
+
+<br>
+
+
+
+
+
+
+
+
+
+
+
+<img src="./Most Recent I-94_files/1x1-grey.gif" width="650" height="1" alt="">
+<br>
+
+	<div class="smallcontent">
+		<div class="small_text">
+			<img src="./Most Recent I-94_files/red-arrow.gif" width="15" height="14" alt=""> Effective April 26, 2013, DHS began automating the admission process. An alien lawfully admitted or paroled into the U.S. is no longer required to be in possession of a preprinted Form I-94. A record of admission printed from the CBP website constitutes a lawful record of admission. See 8 CFR § 1.4(d).
+		</div>
+	</div>
+
+	<div class="smallcontent">
+		<div class="small_text">
+			<img src="./Most Recent I-94_files/red-arrow.gif" width="15" height="14" alt=""> If an employer, local, state or federal agency requests admission information, present your admission (I-94) number along with any additional required documents requested by that employer or agency.
+		</div>
+	</div>
+
+<div class="smallcontent">
+	<div class="small_text">
+		<img src="./Most Recent I-94_files/red-arrow.gif" width="15" height="14" alt=""> Note: For security reasons, we recommend that you close your browser after you have finished retrieving your I-94 number.
+		<p>
+	</p></div>
+</div>
+
+
+
+</div>
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+	<div class="ombcontent">	     
+   		OMB No. 1651-0111<br>
+   		Expiration Date: 09/30/2018
+	</div>
+
+	</div>
+	
+	
+
+
+
+
+
+
+
+
+
+<div id="faq" style="display: none;">
+	
+	
+	
+
+
+
+
+
+
+
+
+
+<div class="page_title">
+	<br>
+	<h1 id="pagetitleleft">
+		
+			
+				I-94 Frequently Asked Questions
+			
+			
+		
+		
+			<a href="https://i94.cbp.dhs.gov/I94/demo.jsp" target="_blank" id="pagetitleright" style="font-weight:normal;" tabindex="10">Demonstration</a>
+		
+		<img src="./Most Recent I-94_files/1x1-grey.gif" width="710" height="1" alt="">
+	</h1>
+	
+</div>
+
+
+	<div id="topcontent" class="nopadding">
+		
+
+
+
+
+
+
+
+
+
+<div id="leftcontentFAQ">
+	<img src="./Most Recent I-94_files/1x1-grey.gif" width="100%" height="1" alt="">
+	<p style="font-weight: bold">
+		<img style="padding-right: 5px" src="./Most Recent I-94_files/red-arrow.gif" width="15" height="14" alt="">
+		What information can I obtain from the website?
+	</p>
+</div>
+<div id="rightcontentFAQ">
+	<img src="./Most Recent I-94_files/1x1-grey.gif" width="100%" height="1" alt="">
+	<p style="font-weight: bold">Answer:</p>
+	<p style="">
+		The I-94 website provides you with the most recent I-94 admission record and limited travel history. The most recent I-94 admission record can be printed and used as evidence of a lawful admission. The website will provide arrival and departure date information for a passport number for the past five years. Travel history will only be provided for the passport number entered for the search.
+	</p>
+</div>
+
+
+		
+
+
+
+
+
+
+
+
+
+<div id="leftcontentFAQ">
+	<img src="./Most Recent I-94_files/1x1-grey.gif" width="100%" height="1" alt="">
+	<p style="font-weight: bold">
+		<img style="padding-right: 5px" src="./Most Recent I-94_files/red-arrow.gif" width="15" height="14" alt="">
+		Where does the travel history come from?
+	</p>
+</div>
+<div id="rightcontentFAQ">
+	<img src="./Most Recent I-94_files/1x1-grey.gif" width="100%" height="1" alt="">
+	<p style="font-weight: bold">Answer:</p>
+	<p style="">
+		CBP maintains arrival records in the Nonimmigrant Information System (NIIS).
+	</p>
+</div>
+
+
+		
+
+
+
+
+
+
+
+
+
+<div id="leftcontentFAQ">
+	<img src="./Most Recent I-94_files/1x1-grey.gif" width="100%" height="1" alt="">
+	<p style="font-weight: bold">
+		<img style="padding-right: 5px" src="./Most Recent I-94_files/red-arrow.gif" width="15" height="14" alt="">
+		What records can I access?
+	</p>
+</div>
+<div id="rightcontentFAQ">
+	<img src="./Most Recent I-94_files/1x1-grey.gif" width="100%" height="1" alt="">
+	<p style="font-weight: bold">Answer:</p>
+	<p style="">
+		NIIS maintains arrival and departure records. The I-94 website will provide the arrival/departure date and port of entry/exit for the passport entered into the query. The website will provide records for the past five years.
+	</p>
+</div>
+
+
+		
+
+
+
+
+
+
+
+
+
+<div id="leftcontentFAQ">
+	<img src="./Most Recent I-94_files/1x1-grey.gif" width="100%" height="1" alt="">
+	<p style="font-weight: bold">
+		<img style="padding-right: 5px" src="./Most Recent I-94_files/red-arrow.gif" width="15" height="14" alt="">
+		Can I obtain travel records for previous or expired passports?
+	</p>
+</div>
+<div id="rightcontentFAQ">
+	<img src="./Most Recent I-94_files/1x1-grey.gif" width="100%" height="1" alt="">
+	<p style="font-weight: bold">Answer:</p>
+	<p style="">
+		Yes. The website will provide travel history going back five years. If you would like to obtain information on an older or expired passport, you must conduct a query on that passport.
+	</p>
+</div>
+
+
+		
+
+
+
+
+
+
+
+
+
+<div id="leftcontentFAQ">
+	<img src="./Most Recent I-94_files/1x1-grey.gif" width="100%" height="1" alt="">
+	<p style="font-weight: bold">
+		<img style="padding-right: 5px" src="./Most Recent I-94_files/red-arrow.gif" width="15" height="14" alt="">
+		What do I need to do if my departure information is incorrect or inaccurate?
+	</p>
+</div>
+<div id="rightcontentFAQ">
+	<img src="./Most Recent I-94_files/1x1-grey.gif" width="100%" height="1" alt="">
+	<p style="font-weight: bold">Answer:</p>
+	<p style="">
+		The information provided on the website is information found in CBP systems.  If you are departing by air or sea, your departure is recorded electronically. There may be times when this information does not appear accurate. Upon departure, this information is verified and then confirmed in CBP systems.<br><br>Also, some land border departures may not be recorded in CBP systems. Land border departures on the Southern Border are not always documented. A departure will be recorded if you depart via land and re-enter the United States prior to the expiration date stamped in your passport. If you are not a resident of Canada or Mexico and you receive an electronic I-94 and depart via land, but do not re-enter the United States prior to the expiration date stamped on your passport, you may want to travel with evidence of your departure into Canada or Mexico. Evidence of departure can include, but is not limited to, foreign entry stamps in a passport, transportation tickets, pay stubs and/or other receipts.
+	</p>
+</div>
+
+
+		
+
+
+
+
+
+
+
+
+
+<div id="leftcontentFAQ">
+	<img src="./Most Recent I-94_files/1x1-grey.gif" width="100%" height="1" alt="">
+	<p style="font-weight: bold">
+		<img style="padding-right: 5px" src="./Most Recent I-94_files/red-arrow.gif" width="15" height="14" alt="">
+		Why do I need my travel history?
+	</p>
+</div>
+<div id="rightcontentFAQ">
+	<img src="./Most Recent I-94_files/1x1-grey.gif" width="100%" height="1" alt="">
+	<p style="font-weight: bold">Answer:</p>
+	<p style="">
+		All information obtained from the website must be used for official purposes. You may need your travel history if you are trying to obtain benefits, whether with USCIS or another agency.
+	</p>
+</div>
+
+
+
+		
+
+
+
+
+
+
+
+
+
+<div id="leftcontentFAQ">
+	<img src="./Most Recent I-94_files/1x1-grey.gif" width="100%" height="1" alt="">
+	<p style="font-weight: bold">
+		<img style="padding-right: 5px" src="./Most Recent I-94_files/red-arrow.gif" width="15" height="14" alt="">
+		What is a Freedom of Information Act (FOIA) request?
+	</p>
+</div>
+<div id="rightcontentFAQ">
+	<img src="./Most Recent I-94_files/1x1-grey.gif" width="100%" height="1" alt="">
+	<p style="font-weight: bold">Answer:</p>
+	<p style="">
+		A FOIA request is a written or electronic request received by CBP from any individual or entity requesting records including databases held or believed to be held by an agency. You can find additional information about FOIA and FOIA requests at <a href="javascript:openHelpLink(&#39;http://www.cbp.gov/site-policy-notices/foia&#39;)">http://www.cbp.gov/site-policy-notices/foia</a>.
+	</p>
+</div>
+
+		
+
+
+
+
+
+
+
+
+
+<div id="leftcontentFAQ">
+	<img src="./Most Recent I-94_files/1x1-grey.gif" width="100%" height="1" alt="">
+	<p style="font-weight: bold">
+		<img style="padding-right: 5px" src="./Most Recent I-94_files/red-arrow.gif" width="15" height="14" alt="">
+		I have already filed a request under the Freedom of Information Act (FOIA) for my travel history. What do I need to do?
+	</p>
+</div>
+<div id="rightcontentFAQ">
+	<img src="./Most Recent I-94_files/1x1-grey.gif" width="100%" height="1" alt="">
+	<p style="font-weight: bold">Answer:</p>
+	<p style="padding-bottom: 35px;">
+		If you have filed a request under FOIA with CBP and the information provided by the I-94 website satisfies that request, you can request a FOIA cancellation by submitting your FOIA number on the Get Travel History portion of the I-94 website.
+	</p>
+</div>
+
+		
+
+
+
+
+
+
+
+
+
+<div id="leftcontentFAQ">
+	<img src="./Most Recent I-94_files/1x1-grey.gif" width="100%" height="1" alt="">
+	<p style="font-weight: bold">
+		<img style="padding-right: 5px" src="./Most Recent I-94_files/red-arrow.gif" width="15" height="14" alt="">
+		What is a FOIA number?
+	</p>
+</div>
+<div id="rightcontentFAQ">
+	<img src="./Most Recent I-94_files/1x1-grey.gif" width="100%" height="1" alt="">
+	<p style="font-weight: bold">Answer:</p>
+	<p style="">
+		CBP provides a case number to each FOIA request submitted. The case numbers begin with CBP and are followed by the year submitted and 6 alphanumeric characters (e.g. CBP-2014-XXXXXX).
+	</p>
+</div>
+
+
+
+		<div id="leftcontentFAQ">
+			<img src="./Most Recent I-94_files/1x1-grey.gif" width="100%" height="1" alt="">
+			<p style="font-weight: bold">
+				<img style="padding-right: 5px" src="./Most Recent I-94_files/red-arrow.gif" width="15" height="14" alt="">
+				What information must I provide?
+			</p>
+		</div>
+		<div id="rightcontentFAQ">
+			<img src="./Most Recent I-94_files/1x1-grey.gif" width="100%" height="1" alt="">
+			<p style="font-weight: bold">Answer:</p>
+			<p>The following information is required to retrieve your I-94 information. Enter the information as it appears on the travel document you used to enter the United States.</p>
+			<div style="text-align: center;">
+				
+				<img src="./Most Recent I-94_files/passport.png" alt="Sample passport containing Country of Issuance, Passport Number, Last/Surname, First (Given) Name, Birth Date, and highlighting the Machine Readable Zone (MRZ)">
+			</div>
+			<span class="smallcontent">Where the name format is ambiguous on a passport, the Machine Readable Zone at the base of the details page should be referenced. These will always follow the ISO standard convention.</span>
+			<ol>
+				<li>Last/Surname- Enter your family name as it appears in the Last Name or Surname field on the travel document you used to enter the United States. If there is any concern about the name to use - please refer to the Machine Readable Zone on the passport. That is in most cases the name that will be used.</li>
+				<li>First (Given) Name- Enter your first (given) name as it appears in the First or Given Name field on the travel document you used to enter the United States. Do not include middle names, nicknames, or titles.</li>
+				<li>Birth Date- Enter the date of your birth.</li>
+				<li>Passport Number- Enter your passport number as it appears on your passport biographic page. The passport number may contain numbers and/or letters. Please closely distinguish between the two. Some commonly confused characters are the number zero (0) and letter 'O' and the number one (1), and the letters 'I'. When seeking travel history, you must enter the passport number you wish to obtain the history from. The website will only provide the history of the passport number entered.</li>
+				<li>Country of Issuance- The passport country of issuance is your country of citizenship as it appears on your passport. The country of citizenship on your passport is the passport issuing authority, regardless of the country the passport was physically obtained in.</li>
+			</ol>
+		</div>
+
+		
+
+
+
+
+
+
+
+
+
+<div id="leftcontentFAQ">
+	<img src="./Most Recent I-94_files/1x1-grey.gif" width="100%" height="1" alt="">
+	<p style="font-weight: bold">
+		<img style="padding-right: 5px" src="./Most Recent I-94_files/red-arrow.gif" width="15" height="14" alt="">
+		Will CBP provide a traveler with any documentation or evidence showing status and time allowed in the U.S.?
+	</p>
+</div>
+<div id="rightcontentFAQ">
+	<img src="./Most Recent I-94_files/1x1-grey.gif" width="100%" height="1" alt="">
+	<p style="font-weight: bold">Answer:</p>
+	<p style="padding-bottom: 35px;">
+		Yes. CBP will provide each traveler with an admission stamp that is annotated with date of admission, class of admission and admitted until date. The CBP admission stamp is listed as an alien registration document found in 8 CFR. 264.1.
+	</p>
+</div>
+
+
+		
+
+
+
+
+
+
+
+
+
+<div id="leftcontentFAQ">
+	<img src="./Most Recent I-94_files/1x1-grey.gif" width="100%" height="1" alt="">
+	<p style="font-weight: bold">
+		<img style="padding-right: 5px" src="./Most Recent I-94_files/red-arrow.gif" width="15" height="14" alt="">
+		How long will my admission record be available on the I-94 website?
+	</p>
+</div>
+<div id="rightcontentFAQ">
+	<img src="./Most Recent I-94_files/1x1-grey.gif" width="100%" height="1" alt="">
+	<p style="font-weight: bold">Answer:</p>
+	<p style="">
+		A traveler will have access to their most recent admission record on the I-94 website. The availability of the record does not convey legal authority to remain in the United States outside of the terms and conditions of admission. All travelers must comply with the terms of the classification granted and admitted until date.
+	</p>
+</div>
+
+
+		
+
+
+
+
+
+
+
+
+
+<div id="leftcontentFAQ">
+	<img src="./Most Recent I-94_files/1x1-grey.gif" width="100%" height="1" alt="">
+	<p style="font-weight: bold">
+		<img style="padding-right: 5px" src="./Most Recent I-94_files/red-arrow.gif" width="15" height="14" alt="">
+		Will the I-94 automation process help eliminate errors? If information on the I-94 is in error, how does the traveler correct mistakes?
+	</p>
+</div>
+<div id="rightcontentFAQ">
+	<img src="./Most Recent I-94_files/1x1-grey.gif" width="100%" height="1" alt="">
+	<p style="font-weight: bold">Answer:</p>
+	<p style="padding-bottom: 35px;">
+		The electronic version of the I-94 will help eliminate errors because the information will be obtained by official documents and officer input. If there is an error or mistake on the paper or electronic form I-94, the traveler can contact the Deferred Inspection office closest to their location.
+	</p>
+</div>
+
+
+		
+
+
+
+
+
+
+
+
+
+<div id="leftcontentFAQ">
+	<img src="./Most Recent I-94_files/1x1-grey.gif" width="100%" height="1" alt="">
+	<p style="font-weight: bold">
+		<img style="padding-right: 5px" src="./Most Recent I-94_files/red-arrow.gif" width="15" height="14" alt="">
+		What should a traveler do if he or she was admitted incorrectly to the United States?
+	</p>
+</div>
+<div id="rightcontentFAQ">
+	<img src="./Most Recent I-94_files/1x1-grey.gif" width="100%" height="1" alt="">
+	<p style="font-weight: bold">Answer:</p>
+	<p style="">
+		If a traveler was admitted incorrectly to the United States, the traveler should visit a local CBP Deferred Inspection Site or Port of Entry (POE) to have his or her admission corrected. A list of Deferred Inspection Sites and POEs can be found on CBP's website, <a href="javascript:openHelpLink(&#39;http://www.cbp.gov&#39;)">http://www.cbp.gov</a>, under the "Ports" link at the bottom of the page. If a traveler was issued an incorrect I-94 by USCIS, the traveler should refer to the Form I-102, which can be found at <a href="javascript:openHelpLink(&#39;http://www.uscis.gov/forms&#39;)">http://www.uscis.gov/forms</a>.
+	</p>
+</div>
+
+
+		
+
+
+
+
+
+
+
+
+
+<div id="leftcontentFAQ">
+	<img src="./Most Recent I-94_files/1x1-grey.gif" width="100%" height="1" alt="">
+	<p style="font-weight: bold">
+		<img style="padding-right: 5px" src="./Most Recent I-94_files/red-arrow.gif" width="15" height="14" alt="">
+		How do I report my departure if I enter via air and depart via land?
+	</p>
+</div>
+<div id="rightcontentFAQ">
+	<img src="./Most Recent I-94_files/1x1-grey.gif" width="100%" height="1" alt="">
+	<p style="font-weight: bold">Answer:</p>
+	<p style="">
+		If you have a paper form I-94 and depart by land, you can turn the form into Canadian Border Services Agency (CBSA) upon entry into Canada or to CBP at the port of entry prior to entering Mexico. If you received an electronic I-94 upon arrival by air or sea and depart via land, your departure may not be recorded accurately. A departure will be recorded if you depart via land and re-enter the United States prior to the expiration date stamped in your passport. If you are not a resident of Canada or Mexico and you receive an electronic I-94 and depart via land, but do not re-enter the United States prior to the expiration date stamped on your passport, you may want to travel with evidence of your departure into Canada or Mexico. Evidence of departure can include, but is not limited to, entry stamps in a passport, transportation tickets, pay stubs and/or other receipts. A traveler can request an entry stamp from CBSA when entering Canada or from the InstitutoNacional de Migracion (INM) when entering Mexico.
+	</p>
+</div>
+
+
+		
+
+
+
+
+
+
+
+
+
+<div id="leftcontentFAQ">
+	<img src="./Most Recent I-94_files/1x1-grey.gif" width="100%" height="1" alt="">
+	<p style="font-weight: bold">
+		<img style="padding-right: 5px" src="./Most Recent I-94_files/red-arrow.gif" width="15" height="14" alt="">
+		How does a traveler revalidate a visa without their I-94?
+	</p>
+</div>
+<div id="rightcontentFAQ">
+	<img src="./Most Recent I-94_files/1x1-grey.gif" width="100%" height="1" alt="">
+	<p style="font-weight: bold">Answer:</p>
+	<p style="">
+		The I-94 admission record is created electronically and maintained in CBP systems. CBP will verify the I-94 electronically to re-validate an expired visa if the traveler meets the conditions of automatic revalidation. In order to demonstrate eligibility for automatic revalidation, a traveler may be required to present a copy of the website printout to the air or sea carrier prior to boarding. If entry occurred prior to automation, a paper form must be presented in order to comply with validation requirements. For more information about automatic revalidation go to <a href="javascript:openHelpLink(&#39;http://www.cbp.gov/document/bulletins/automatic-revalidation-visas&#39;)">http://www.cbp.gov/document/bulletins/automatic-revalidation-visas</a>.
+	</p>
+</div>
+
+
+		
+
+
+
+
+
+
+
+
+
+<div id="leftcontentFAQ">
+	<img src="./Most Recent I-94_files/1x1-grey.gif" width="100%" height="1" alt="">
+	<p style="font-weight: bold">
+		<img style="padding-right: 5px" src="./Most Recent I-94_files/red-arrow.gif" width="15" height="14" alt="">
+		How does CBP document SEVIS records?
+	</p>
+</div>
+<div id="rightcontentFAQ">
+	<img src="./Most Recent I-94_files/1x1-grey.gif" width="100%" height="1" alt="">
+	<p style="font-weight: bold">Answer:</p>
+	<p style="">
+		CBP documents the SEVIS number in our internal system during the inspection process. CBP may provide the SEVIS number on the CBP admission stamp in a foreign passport if time permits.
+	</p>
+</div>
+
+
+		
+
+
+
+
+
+
+
+
+
+<div id="leftcontentFAQ">
+	<img src="./Most Recent I-94_files/1x1-grey.gif" width="100%" height="1" alt="">
+	<p style="font-weight: bold">
+		<img style="padding-right: 5px" src="./Most Recent I-94_files/red-arrow.gif" width="15" height="14" alt="">
+		How does CBP's automation of Form I-94 affect the Form I-9 process?
+	</p>
+</div>
+<div id="rightcontentFAQ">
+	<img src="./Most Recent I-94_files/1x1-grey.gif" width="100%" height="1" alt="">
+	<p style="font-weight: bold">Answer:</p>
+	<p style="">
+		It does not affect the Form I-9 process. However, the public should be prepared to see I-94 Forms that will look differently than what they are used to seeing. Now, they will see both I-94 Forms that have original stamps and writing on a card as well as I-94 Forms that are printouts with no original writing or stamps on them. Both versions are acceptable for Form I-9 purposes. For more information on the I-9 form and process, visit <a href="javascript:openHelpLink(&#39;http://www.uscis.gov&#39;)">http://www.uscis.gov</a>.
+	</p>
+</div>
+
+
+		
+
+
+
+
+
+
+
+
+
+<div id="leftcontentFAQ">
+	<img src="./Most Recent I-94_files/1x1-grey.gif" width="100%" height="1" alt="">
+	<p style="font-weight: bold">
+		<img style="padding-right: 5px" src="./Most Recent I-94_files/red-arrow.gif" width="15" height="14" alt="">
+		Where do I go to get additional information?
+	</p>
+</div>
+<div id="rightcontentFAQ">
+	<img src="./Most Recent I-94_files/1x1-grey.gif" width="100%" height="1" alt="">
+	<p style="font-weight: bold">Answer:</p>
+	<p style="">
+		If you have additional questions about I-94 Automation, arrival numbers or travel to the United States, please visit <a href="javascript:openHelpLink(&#39;https://help.cbp.gov/app/answers/list/kw/I-94%20Automation&#39;)">https://help.cbp.gov/app/answers/list/kw/I-94%20Automation</a>.
+	</p>
+</div>
+
+
+		<br>
+	</div>
+	<div class="ombcontent">	     
+				OMB No. 1651-0111<br>
+				Expiration Date: 09/30/2018
+	</div>
+</div>
+
+	<div style="background-color: rgb(0, 52, 102); padding-bottom: 1px; padding-top: 4px; text-align: center;">
+		
+		
+		<p><a href="javascript:openHelpLink(&#39;https://help.cbp.gov/app/answers/list/kw/I-94%20Automation&#39;)" style="color:white;">For inquiries or questions regarding your I-94, please click here.</a></p>
+	
+		
+		
+		<p><a href="javascript:openHelpLink(&#39;http://www.cbp.gov/site-policy-notices/accessibility&#39;)" style="color:white;">Accessibility</a>
+	
+		<span style="color:white;"> | </span>
+	
+		
+		
+		<a href="javascript:openHelpLink(&#39;http://www.dhs.gov/xutil/gc_1157139158971.shtm#0&#39;)" style="color:white;">Privacy Policy</a></p>
+	</div>
+
+	</div>
+
+
+
+
+</body></html>

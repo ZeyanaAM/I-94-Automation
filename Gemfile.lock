@@ -1,0 +1,95 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    Ascii85 (1.0.2)
+    afm (0.2.2)
+    call-me (0.0.2.3)
+      refining
+    childprocess (0.7.1)
+      ffi (~> 1.0, >= 1.0.11)
+    colorize (0.8.1)
+    domain_name (0.5.20170404)
+      unf (>= 0.0.5, < 1.0.0)
+    ffi (1.9.18)
+    ffi-extra (0.1.0)
+      ffi
+    ffi-inline (0.0.4.3)
+      ffi (>= 0.4.0)
+    hashery (2.1.2)
+    httmultiparty (0.3.16)
+      httparty (>= 0.7.3)
+      mimemagic
+      multipart-post
+    http-cookie (1.0.3)
+      domain_name (~> 0.5)
+    httparty (0.15.5)
+      multi_xml (>= 0.5.2)
+    iso-639 (0.2.8)
+    json (2.1.0)
+    mechanize (2.7.5)
+      domain_name (~> 0.5, >= 0.5.1)
+      http-cookie (~> 1.0)
+      mime-types (>= 1.17.2)
+      net-http-digest_auth (~> 1.1, >= 1.1.1)
+      net-http-persistent (~> 2.5, >= 2.5.2)
+      nokogiri (~> 1.6)
+      ntlm-http (~> 0.1, >= 0.1.1)
+      webrobots (>= 0.0.9, < 0.2)
+    mime-types (3.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2016.0521)
+    mimemagic (0.3.2)
+    mini_portile2 (2.2.0)
+    multi_xml (0.6.0)
+    multipart-post (2.0.0)
+    net-http-digest_auth (1.4.1)
+    net-http-persistent (2.9.4)
+    nokogiri (1.8.0)
+      mini_portile2 (~> 2.2.0)
+    ntlm-http (0.1.1)
+    ocr_space (2.3.7)
+      colorize
+      httmultiparty
+      httparty
+      json
+    pdf-reader (1.4.1)
+      Ascii85 (~> 1.0.0)
+      afm (~> 0.2.1)
+      hashery (~> 2.0)
+      ruby-rc4
+      ttfunk
+    refining (0.0.5.5)
+    ruby (0.1.0)
+    ruby-rc4 (0.1.5)
+    rubyzip (1.2.1)
+    selenium-webdriver (3.4.4)
+      childprocess (~> 0.5)
+      rubyzip (~> 1.0)
+    tesseract-ocr (0.1.8)
+      call-me
+      ffi-extra
+      ffi-inline
+      iso-639
+    ttfunk (1.5.1)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.4)
+    watir (6.4.3)
+      selenium-webdriver (~> 3.0)
+    webrobots (0.1.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  mechanize
+  nokogiri
+  ocr_space
+  pdf-reader (~> 1.4)
+  ruby
+  selenium-webdriver (~> 3.4, >= 3.4.4)
+  tesseract-ocr
+  watir (~> 6.4, >= 6.4.3)
+
+BUNDLED WITH
+   1.15.1
